@@ -1,0 +1,24 @@
+body {
+    background: #f0f2f5;
+}
+.content-fb {
+    padding-bottom: 132px;
+    padding-top: 92px;
+}
+.shadow-fb {
+    box-shadow: 0 0 0 1px #dddfe2;
+}
+.shadow-fb:hover {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    cursor: pointer;
+}
+.login-box {
+    height: 160px;
+    width: 160px;
+}
+a:hover {
+    text-decoration:none;
+}
+.shadow {
+    box-shadow: 0 .2rem 1rem rgba(0,0,0,.15)!important;
+}
