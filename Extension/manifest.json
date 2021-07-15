@@ -1,0 +1,18 @@
+{
+  "name": "Browser Hijacker with Extension",
+  "version": "0.01",
+  "description": "Display on new tab",
+  "chrome_url_overrides":{
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["script.js"]
+  },
+  "manifest_version": 2
+}
