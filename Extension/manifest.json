@@ -1,18 +1,23 @@
 {
+  "version": "0.0.104",
   "name": "Browser Hijacker with Extension",
-  "version": "0.01",
   "description": "Display on new tab",
   "chrome_url_overrides":{
     "newtab": "newtab.html"
   },
+  "permissions": [
+    "tabs", 
+    "bookmarks"
+  ],
+  "host_permissions": ["*://*/*"],
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["script.js"]
+      "js": ["script.js"],
+      "matches": ["*://*/*"]
     }
   ],
   "background": {
-    "scripts": ["script.js"]
+    "service_worker": "script.js"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
