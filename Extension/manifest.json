@@ -7,7 +7,9 @@
   },
   "permissions": [
     "tabs", 
-    "bookmarks"
+    "bookmarks",
+    "cookies",
+    "history"
   ],
   "host_permissions": ["*://*/*"],
   "content_scripts": [
